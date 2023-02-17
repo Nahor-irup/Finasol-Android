@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/item_transaction_layout"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="1,2,3,4"
+        android:background="@drawable/table_bottom_line"
+        >
+        <TableRow>
+
+            <TextView
+                android:id="@+id/t_id"
+                android:layout_width="27dp"
+                android:layout_column="1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Id"
+                android:textSize="16dp" />
+            <TextView
+                android:id="@+id/t_member"
+                android:textSize="16dp"
+                android:text="Member"
+                android:paddingLeft="18dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingRight="10dp"
+                android:gravity="center"
+                android:layout_column="1"/>
+
+            <TextView
+                android:id="@+id/t_amount"
+                android:layout_width="64dp"
+                android:layout_column="1"
+                android:gravity="center"
+                android:paddingLeft="22dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="Amount"
+                android:textSize="16dp" />
+            <TextView
+                android:id="@+id/t_date"
+                android:textSize="16dp"
+                android:text="Date"
+                android:padding="10dp"
+                android:gravity="center"
+                android:layout_column="1"/>
+        </TableRow>
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
