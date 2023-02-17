@@ -19,10 +19,12 @@ public class TransactionRecyclerViewAdapter extends RecyclerView.Adapter<Transac
 
     private Context context;
     private List<Transaction> transactionList;
+    private ITransactionAdapterListener listener;
 
-    public TransactionRecyclerViewAdapter(Context context, List<Transaction> transactionList) {
+    public TransactionRecyclerViewAdapter(Context context, List<Transaction> transactionList, ITransactionAdapterListener listener) {
         this.context = context;
         this.transactionList = transactionList;
+        this.listener = listener;
     }
 
     @NonNull
@@ -38,7 +40,7 @@ public class TransactionRecyclerViewAdapter extends RecyclerView.Adapter<Transac
     @Override
     public void onBindViewHolder(@NonNull TransactionRecyclerViewHolder holder, int position) {
         Transaction transaction = transactionList.get(position);
-        holder.getT_id().setText(transaction.Id);
+        holder.getT_id().setText(String.valueOf(transaction.Id));
         holder.getT_member().setText(transaction.Member);
         holder.getT_amount().setText(transaction.Amount);
         holder.getT_date().setText(transaction.Date);
@@ -46,7 +48,8 @@ public class TransactionRecyclerViewAdapter extends RecyclerView.Adapter<Transac
         holder.getClRootLayout().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "Item at"+holder.getAdapterPosition()+" clicked", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(context, "Item at"+holder.getAdapterPosition()+" clicked", Toast.LENGTH_SHORT).show();
+                listener.onItemClicked(transaction);
             }
         });
     }
@@ -59,5 +62,9 @@ public class TransactionRecyclerViewAdapter extends RecyclerView.Adapter<Transac
     public void searchDataList(ArrayList<Transaction> searchList){
         transactionList = searchList;
         notifyDataSetChanged();
+    }
+
+    public interface ITransactionAdapterListener{
+        void onItemClicked(Transaction transaction);
     }
 }

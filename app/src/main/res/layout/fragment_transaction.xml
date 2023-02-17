@@ -22,7 +22,7 @@
         app:searchHintIcon="@null"
         app:searchIcon="@drawable/icon_search" />
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnUpdate"
+        android:id="@+id/btnNewTransaction"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -38,8 +38,6 @@
         app:layout_constraintStart_toEndOf="@+id/search"
         app:layout_constraintEnd_toEndOf="parent"
         />
-
-
     <TableLayout
         android:id="@+id/table"
         android:layout_width="match_parent"
@@ -52,7 +50,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         >
         <TableRow>
-
             <TextView
                 android:layout_width="18dp"
                 android:layout_column="1"
@@ -60,7 +57,6 @@
                 android:padding="10dp"
                 android:text="Id"
                 android:textSize="16sp" />
-
             <TextView
                 android:layout_width="64dp"
                 android:layout_height="match_parent"
@@ -69,14 +65,12 @@
                 android:padding="10dp"
                 android:text="Member"
                 android:textSize="16sp" />
-
             <TextView
                 android:layout_column="1"
                 android:gravity="center"
                 android:padding="10dp"
                 android:text="Amount"
                 android:textSize="16sp" />
-
             <TextView
                 android:layout_column="1"
                 android:gravity="center"

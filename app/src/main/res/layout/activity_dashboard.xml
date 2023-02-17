@@ -7,15 +7,6 @@
     android:background="@color/gray10"
     tools:context=".Dashboard.DashboardActivity">
 
-<!--    <androidx.fragment.app.FragmentContainerView-->
-<!--        android:id="@+id/fragment_container_view"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="0dp"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/bottom_nav_bar"-->
-<!--        />-->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -39,11 +30,12 @@
     </com.google.android.material.bottomappbar.BottomAppBar>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/btnQr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
         android:src="@drawable/icon_qr"
         app:layout_anchor="@id/bottom_nav_bar"
-        app:maxImageSize="35dp" />
+        app:maxImageSize="35dp"
+        tools:ignore="SpeakableTextPresentCheck" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
